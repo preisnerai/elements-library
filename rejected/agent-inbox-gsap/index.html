@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../node_modules/@fontsource/inter/600.css">
+<link rel="stylesheet" href="../../node_modules/@fontsource/inter/800.css">
+<link rel="stylesheet" href="../../node_modules/@fontsource/jetbrains-mono/700.css">
+<link rel="stylesheet" href="../../node_modules/@fontsource/jetbrains-mono/800.css">
+<script src="../../node_modules/gsap/dist/gsap.min.js"></script>
+<style>
+  :root { --bg:#0D0D0E; --paper:#ECE9E2; --ink:#111112; --accent:#FF5A1F; --text:#F3F1EC; --muted:#8D8A84; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--bg); font-family: Inter, sans-serif; color: var(--text); -webkit-font-smoothing: antialiased; }
+  #stage { position: absolute; inset: 0; overflow: hidden; }
+  /* kolumna treści we flow: x 86–920 (strefa bezpieczna z zapasem), start y 250 */
+  #col { position: absolute; left: 86px; top: 250px; width: 834px; display: flex; flex-direction: column; }
+  #days { display: flex; align-items: center; gap: 22px; height: 60px; }
+  #days b { font-family: 'JetBrains Mono', monospace; font-size: 40px; font-weight: 800; letter-spacing: -0.01em; white-space: nowrap; }
+  #days b em { font-style: normal; color: var(--accent); }
+  #sq { display: flex; gap: 10px; }
+  #sq i { width: 40px; height: 40px; border-radius: 4px; background: var(--text); }
+  #sq i.off { background: transparent; border: 3px solid #3A3936; }
+  #sq i.today { background: var(--accent); }
+  #headline { margin-top: 34px; font-size: 92px; line-height: 1.0; font-weight: 800; letter-spacing: -0.045em; }
+  #headline .ln { display: block; overflow: hidden; padding-bottom: 10px; }
+  #headline .ln span { display: inline-block; }
+  #hero { margin-top: 26px; position: relative; height: 290px; }
+  #num { font-size: 280px; font-weight: 800; letter-spacing: -0.065em; line-height: .78; font-variant-numeric: tabular-nums; position: absolute; left: -8px; top: 0; }
+  #heroLbl { position: absolute; left: 0; top: 232px; height: 56px; width: 834px; font-family: 'JetBrains Mono', monospace; font-size: 42px; font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase; }
+  #heroLbl span { position: absolute; left: 0; top: 0; white-space: nowrap; }
+  #lblStart { color: var(--muted); } #lblEnd { color: var(--accent); }
+  #belt { margin-top: 36px; height: 300px; position: relative; border-top: 3px solid #2C2B29; border-bottom: 3px solid #2C2B29; overflow: hidden;
+          -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 46px, #000 254px, transparent 300px); }
+  .slip { position: absolute; left: 0; right: 0; height: 96px; top: 0; border-radius: 6px; display: flex; align-items: center; gap: 20px; padding: 0 16px 0 28px; background: var(--paper); color: var(--ink); }
+  .slip::before { content: ''; position: absolute; left: -1px; top: 50%; width: 14px; height: 28px; margin-top: -14px; border-radius: 0 14px 14px 0; background: var(--bg); }
+  .from { flex: 1; min-width: 0; font-size: 44px; font-weight: 800; letter-spacing: -0.03em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; position: relative; }
+  .from s { position: absolute; left: 0; right: 0; top: 52%; height: 5px; background: var(--ink); transform-origin: 0 50%; transform: scaleX(0); }
+  .tag { flex: none; height: 62px; padding: 0 20px; border-radius: 4px; display: flex; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 34px; font-weight: 800; text-transform: uppercase; color: var(--ink); }
+  #result { position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 10px; opacity: 0; }
+  #resMain { font-size: 66px; font-weight: 800; letter-spacing: -0.04em; display: flex; align-items: center; gap: 20px; }
+  #resMain i { flex: none; width: 66px; height: 66px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; }
+  #resMain i svg { width: 40px; height: 40px; }
+  #resSub { font-size: 40px; font-weight: 600; color: var(--muted); padding-left: 86px; }
+  #bins { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .bin { height: 140px; padding: 18px 22px 16px; display: flex; flex-direction: column; justify-content: space-between; background: #1A1A19; border-radius: 6px; position: relative; overflow: hidden; }
+  .bin .bar { position: absolute; left: 0; right: 0; top: 0; height: 8px; }
+  .bin .flash { position: absolute; inset: 0; opacity: 0; }
+  .bin b { position: relative; font-size: 72px; font-weight: 800; letter-spacing: -0.05em; line-height: .85; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .bin span { position: relative; font-family: 'JetBrains Mono', monospace; font-size: 32px; font-weight: 700; text-transform: uppercase; color: var(--muted); }
+  #grain { position: absolute; inset: 0; mix-blend-mode: overlay; opacity: .12; pointer-events: none; }
+</style></head>
+<body><div id="stage">
+  <div id="col">
+    <div id="days"><b></b><div id="sq"></div></div>
+    <h1 id="headline"></h1>
+    <div id="hero"><div id="num">0</div><div id="heroLbl"><span id="lblStart"></span><span id="lblEnd"></span></div></div>
+    <div id="belt"><div id="result"><div id="resMain"><i><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span></span></div><div id="resSub"></div></div></div>
+    <div id="bins"></div>
+  </div>
+  <canvas id="grain" width="1080" height="1920"></canvas>
+</div>
+<script>
+const $ = s => document.querySelector(s);
+let tl, P, slips = [], bins = {}, noiseTiles = [];
+// taśma: bilecik wjeżdża od góry, dostaje pieczątkę kategorii na środku, wyjeżdża dołem do kosza (kosz miga i liczy)
+const T0 = .45, GAP = .34, TRAVEL = 1.2, BELT_H = 300, SLIP_H = 96;
+const easeOut = x => 1 - Math.pow(1 - x, 3), clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const backOut = x => { const c = 2.0; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+function el(tag, cls, html) { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+function mkNoise() {
+  let s = 1234567; const rnd = () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296;
+  for (let k = 0; k < 4; k++) { const c = document.createElement('canvas'); c.width = c.height = 256; const x = c.getContext('2d'), d = x.createImageData(256, 256);
+    for (let i = 0; i < d.data.length; i += 4) { const v = rnd() * 255; d.data[i] = d.data[i+1] = d.data[i+2] = v; d.data[i+3] = 255; } x.putImageData(d, 0, 0); noiseTiles.push(c); }
+}
+window.setup = async (props) => {
+  P = props; const C = P.colors, r = document.documentElement.style;
+  for (const k in C) r.setProperty('--' + k, C[k]);
+  $('#days b').innerHTML = `${P.dayLabel.toUpperCase()} <em>${P.day}</em>/${P.days}`;
+  for (let i = 1; i <= P.days; i++) $('#sq').appendChild(el('i', i < P.day ? '' : i === P.day ? 'off todo' : 'off'));
+  $('#headline').innerHTML = P.headline.map(l => `<span class="ln"><span>${l}</span></span>`).join('');
+  $('#lblStart').textContent = P.heroLabelStart; $('#lblEnd').textContent = P.heroLabelEnd;
+  $('#resMain span').textContent = P.resultMain; $('#resSub').textContent = P.resultSub;
+  P.bins.forEach(b => {
+    const d = el('div', 'bin', `<div class="flash"></div><div class="bar"></div><b>0</b><span>${b.label}</span>`);
+    d.querySelector('.bar').style.background = b.color; d.querySelector('.flash').style.background = b.color;
+    $('#bins').appendChild(d); bins[b.key] = { ...b, el: d, n: P.emails.filter(m => m.bin === b.key).length };
+  });
+  P.emails.forEach(m => {
+    const b = bins[m.bin], d = el('div', 'slip', `<div class="from">${m.from}<s></s></div>`);
+    const tag = el('div', 'tag', b.label); tag.style.background = b.color; d.appendChild(tag);
+    $('#belt').appendChild(d); slips.push({ ...m, el: d, tag, strike: d.querySelector('s') });
+  });
+  window.END = T0 + (P.emails.length - 1) * GAP + TRAVEL;
+  mkNoise(); build();
+};
+function build() {
+  const ease = 'expo.out', E = window.END;
+  tl = gsap.timeline({ paused: true });
+  gsap.set('#days', { opacity: 0, y: 20 }); gsap.set('#sq i', { scale: 0 }); gsap.set('#headline .ln span', { yPercent: 110 });
+  gsap.set('#num', { yPercent: 40, opacity: 0 }); gsap.set('#lblStart', { opacity: 0 }); gsap.set('#lblEnd', { opacity: 0, y: 24 });
+  gsap.set('#belt', { opacity: 0 }); gsap.set('.bin', { opacity: 0, y: 30 });
+  tl.to('#days', { opacity: 1, y: 0, duration: .5, ease }, 0)
+    .to('#sq i', { scale: 1, duration: .45, ease: 'back.out(2.5)', stagger: .04 }, .05)
+    .to('#sq i.todo', { backgroundColor: P.colors.accent, borderColor: P.colors.accent, duration: .2 }, .45)
+    .to('#headline .ln span', { yPercent: 0, duration: .8, ease, stagger: .08 }, .08)
+    .to('#num', { yPercent: 0, opacity: 1, duration: .8, ease }, .2)
+    .to('#lblStart', { opacity: 1, duration: .4 }, .35)
+    .to('#belt', { opacity: 1, duration: .3 }, .3)
+    .to('.bin', { opacity: 1, y: 0, duration: .6, ease, stagger: .06 }, .3)
+    // finał: wynik w miejscu taśmy, liczba w kolorze akcentu
+    .to('#lblStart', { opacity: 0, y: -24, duration: .3, ease: 'power2.in' }, E - .15)
+    .to('#lblEnd', { opacity: 1, y: 0, duration: .55, ease }, E + .1)
+    .to('#num', { color: P.colors.accent, duration: .2 }, E)
+    .fromTo('#num', { scale: 1 }, { scale: 1.06, duration: .16, ease: 'power2.out', yoyo: true, repeat: 1, transformOrigin: '0% 100%' }, E)
+    .fromTo('#result', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .7, ease }, E + .1)
+    .fromTo('#resMain i', { scale: 0, rotate: -40 }, { scale: 1, rotate: 0, duration: .6, ease: 'back.out(2.4)' }, E + .2)
+    .set({}, {}, P.duration);
+}
+window.seek = (t) => {
+  tl.seek(Math.min(t, tl.duration()), false);
+  const filedN = {}; P.bins.forEach(b => filedN[b.key] = 0);
+  slips.forEach((m, i) => {
+    const t0 = T0 + i * GAP, p = (t - t0) / TRAVEL, e = m.el;
+    if (p < 0 || p > 1) { e.style.opacity = 0; if (p > 1) filedN[m.bin] += 1; return; }
+    const y = -SLIP_H + p * (BELT_H + SLIP_H); e.style.opacity = 1; e.style.transform = `translateY(${y}px)`;
+    const s = clamp((y + SLIP_H / 2 - 120) / 60); // pieczątka po minięciu środka taśmy
+    m.tag.style.opacity = s > 0 ? 1 : 0; m.tag.style.transform = `scale(${s > 0 ? backOut(clamp(s * 1.8)) : 0}) rotate(${s > 0 ? (1 - clamp(s * 1.8)) * -8 : 0}deg)`;
+    if (m.bin === 'spam') { m.strike.style.transform = `scaleX(${easeOut(clamp((s - .2) * 2))})`; e.querySelector('.from').style.opacity = 1 - .45 * clamp((s - .2) * 2); }
+  });
+  let filed = 0;
+  P.bins.forEach(b => { const B = bins[b.key], v = Math.round(b.value * (B.n ? filedN[b.key] / B.n : 1)); B.el.querySelector('b').textContent = v; filed += v; B.el.querySelector('.flash').style.opacity = 0; });
+  slips.forEach((m, i) => { const h = t - (T0 + i * GAP + TRAVEL); if (h > 0 && h < .3) bins[m.bin].el.querySelector('.flash').style.opacity = .35 * (1 - h / .3); });
+  $('#num').textContent = P.total - filed;
+  // żywy hold: kosze lekko „oddychają", dzisiejszy kwadrat pulsuje
+  const today = $('#sq i.todo'); if (today) today.style.opacity = t > .5 ? .75 + .25 * Math.cos(t * 5) : 1;
+  const g = $('#grain').getContext('2d'), f = Math.floor(t * 30), tile = noiseTiles[f % 4];
+  g.clearRect(0, 0, 1080, 1920); g.save(); g.translate((f * 97) % 256, (f * 53) % 256); g.fillStyle = g.createPattern(tile, 'repeat'); g.fillRect(-256, -256, 1080 + 512, 1920 + 512); g.restore();
+};
+</script></body></html>

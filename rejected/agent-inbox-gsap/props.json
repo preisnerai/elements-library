@@ -1,0 +1,27 @@
+{
+  "width": 1080, "height": 1920, "fps": 30, "duration": 7.5,
+  "colors": { "bg": "#0D0D0E", "paper": "#ECE9E2", "ink": "#111112", "accent": "#FF5A1F", "text": "#F3F1EC", "muted": "#8D8A84" },
+  "day": 7, "days": 7, "dayLabel": "Dzień",
+  "headline": ["Skrzynka", "ogarnia się sama"],
+  "total": 142,
+  "heroLabelStart": "maili w skrzynce",
+  "heroLabelEnd": "czeka na mnie",
+  "resultMain": "133 z 142 ogarnięte",
+  "resultSub": "w 6 minut, bez mojego udziału",
+  "bins": [
+    { "key": "lead", "label": "Leady", "value": 12, "color": "#FF5A1F" },
+    { "key": "fv", "label": "Faktury", "value": 23, "color": "#4C8DFF" },
+    { "key": "spam", "label": "Spam", "value": 98, "color": "#8D8A84" }
+  ],
+  "emails": [
+    { "from": "Mega Promo −70%", "bin": "spam" },
+    { "from": "Anna: oferta Q4", "bin": "lead" },
+    { "from": "Faktura 10/2026", "bin": "fv" },
+    { "from": "Wygrałeś telefon!!", "bin": "spam" },
+    { "from": "Zapytanie o wycenę", "bin": "lead" },
+    { "from": "Newsletter #41", "bin": "spam" },
+    { "from": "Faktura: hosting", "bin": "fv" },
+    { "from": "Webinar: ostatnia szansa", "bin": "spam" },
+    { "from": "Faktura korygująca", "bin": "fv" }
+  ]
+}
