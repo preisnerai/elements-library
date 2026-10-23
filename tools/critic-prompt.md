@@ -9,6 +9,10 @@ Tekst, który w kaflu 360x640 jest trudny do przeczytania, będzie trudny do prz
 
 Strefy bezpieczne TikToka (w pełnej rozdzielczości 1080x1920): górne 240 px, dolne 480 px i prawe 140 px są
 zasłaniane przez interfejs aplikacji — nie może tam być kluczowej treści (w kaflu: górne 80 px, dolne 160 px, prawe ~47 px).
+Elementy czysto dekoracyjne mogą wchodzić w te strefy.
+
+Styl docelowy zamówiony przez autora na podstawie jego referencji (oceniaj jakość wykonania w tym stylu, nie karz za sam wybór stylu):
+{{STYLE}}
 
 Poprzednie pomysły w tej serii (oceniaj oryginalność względem nich i względem generycznych szablonów):
 {{PREVIOUS}}
@@ -31,3 +35,9 @@ WADY:
 1. (największa wada — konkretnie: co, gdzie w kadrze, w której klatce/czasie, jak naprawić)
 2. ...
 3. ...
+
+---
+Od iteracji 003 {{STYLE}} = „edytorska kinetyczna typografia na jasnoszarym tle z delikatną siatką i winietą; jedna rodzina fontów
+(Inter, tylko Regular i Bold) z dużym kontrastem skali (małe słowa + ogromne słowo-klucz); tekst wchodzi słowo po słowie z rozmyciem;
+ciemne karty UI z miękkim cieniem, przerywane łączniki do „chipów"; czarne, rozmyte kształty w rogach jako głębia ostrości;
+przejścia przez rozmycie kadru; jeden czerwony akcent." (001–002 oceniane bez tej sekcji.)

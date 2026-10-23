@@ -1,0 +1,24 @@
+{
+  "width": 1080, "height": 1920, "fps": 30, "duration": 7.5,
+  "colors": { "bg": "#ECECEC", "ink": "#0F0F10", "muted": "#7A7B80", "accent": "#E3262B", "card": "#1B1B1D", "cardText": "#F3F3F3" },
+  "intro": { "lead": "od tygodnia moje **spotkania**", "keyword": "NOTUJE AI" },
+  "transcript": {
+    "label": "transkrypt · 62 min",
+    "lines": [
+      "…i to by było na tyle z zeszłego tygodnia.",
+      "Dobra, zacznijmy od budżetu, bo Ania",
+      "ma twardy deadline. Czyli ustalone:",
+      "[[budżet Q4 zatwierdzony]], jak w mailu.",
+      "Teraz oferta. Kto się tym zajmie? Marek?",
+      "Super, czyli [[Marek: oferta do piątku]].",
+      "Jeszcze demo, klient prosił o termin",
+      "we wtorek rano. Pasuje? To zapisuję:",
+      "[[demo we wtorek o 10:00]]. Coś jeszcze?",
+      "Nie? To dzięki, widzimy się za tydzień,",
+      "nagranie wrzucę na kanał zespołu, jak",
+      "tylko się przetworzy. Hej, na razie!"
+    ]
+  },
+  "result": { "lead": "przez 7 dni **odzyskałem**", "minutes": 250, "proof": "**23** spotkania · **0** notatek ręcznie" },
+  "timing": { "toHeader": 1.4, "highlight": 2.45, "extract": 2.95, "result": 4.7 }
+}
