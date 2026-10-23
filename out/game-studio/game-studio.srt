@@ -1,0 +1,51 @@
+1
+00:00:00,000 --> 00:00:05,600
+Claude potrafi zamienić się w całe studio gier i nie musisz pisać ani linijki kodu.
+
+2
+00:00:05,600 --> 00:00:09,800
+To darmowy skill, a właściwie jedenaście skilli, które pracują razem.
+
+3
+00:00:09,800 --> 00:00:12,200
+Każdy z nich ma osobne zadanie.
+
+4
+00:00:12,200 --> 00:00:15,400
+Jeden rozbiera na części mechanikę gry, którą lubisz,
+
+5
+00:00:15,400 --> 00:00:17,700
+drugi robi od nowa grafikę,
+
+6
+00:00:17,700 --> 00:00:19,600
+trzeci buduje backend,
+
+7
+00:00:19,600 --> 00:00:25,600
+a czwarty podpina grę pod dowolny kontroler. Dzięki temu zagrasz na telefonie, tablecie albo laptopie.
+
+8
+00:00:25,600 --> 00:00:27,900
+Najciekawszy jest skill od modów.
+
+9
+00:00:27,900 --> 00:00:34,900
+Opisujesz zmianę własnymi słowami, a Claude przebudowuje grę od środka: dodaje mapę ze śniegiem, nową broń, nowe stroje,
+
+10
+00:00:34,900 --> 00:00:40,500
+a nawet łączy dwie gry w jedną, na przykład miasto z GTA z budowaniem z Minecrafta.
+
+11
+00:00:40,500 --> 00:00:43,700
+Nie powtarzasz więc cudzej gry, tylko budujesz własną.
+
+12
+00:00:43,700 --> 00:00:48,500
+Zainstalujesz go jednym ruchem: wklejasz link w Claude i piszesz install skill.
+
+13
+00:00:48,500 --> 00:00:56,100
+U mnie ta sama zasada działa w OpenCode, bo każdy skill ma tam jedną rolę, więc AI się nie gubi.
