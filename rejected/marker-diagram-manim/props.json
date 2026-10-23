@@ -1,0 +1,32 @@
+{
+  "duration": 6.5,
+  "fps": 30,
+  "colors": {
+    "bg": "#0B0B0C",
+    "line": "#F2F2F2",
+    "accent": "#FF4136",
+    "muted": "#9A9AA0"
+  },
+  "input": {
+    "label": "nowy mail",
+    "icon": "mail"
+  },
+  "core": "AGENT AI",
+  "outputs": [
+    {
+      "label": "odpowiedź",
+      "ok": true
+    },
+    {
+      "label": "termin",
+      "ok": false,
+      "note": "1 błąd"
+    },
+    {
+      "label": "faktura",
+      "ok": true
+    }
+  ],
+  "resultTop": "87 maili",
+  "resultBig": "0 kliknięć"
+}
