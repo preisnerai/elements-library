@@ -1,0 +1,37 @@
+{
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 6.0,
+  "colors": {
+    "wall": "#1F3A33",
+    "board": "#E4DACA",
+    "paper": "#F7F2E7",
+    "ink": "#17140F",
+    "red": "#C42A1E",
+    "binding": "#232220"
+  },
+  "boardKicker": "TESTUJĘ OD TYGODNIA",
+  "boardTitle": "AGENTA AI",
+  "pageHeader": "DZIEŃ TESTU",
+  "totalLabel": "RAZEM ODZYSKANE",
+  "todayLabel": "dziś",
+  "startDate": "2026-10-12",
+  "minutes": [
+    35,
+    48,
+    52,
+    61,
+    55,
+    70,
+    59
+  ],
+  "stampKicker": "ODZYSKANE W TYDZIEŃ",
+  "timing": {
+    "firstTear": 0.45,
+    "firstGap": 0.68,
+    "gapRatio": 0.8,
+    "minGap": 0.16,
+    "stampDelay": 0.55
+  }
+}
