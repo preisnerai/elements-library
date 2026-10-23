@@ -1,0 +1,55 @@
+{
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 7.0,
+  "colors": {
+    "bg": "#E7E7E9",
+    "ink": "#0F0F10",
+    "key": "#F5F5F3",
+    "done": "#1C1C1E",
+    "fail": "#E3262B",
+    "failUi": "#F65A50"
+  },
+  "lead": "tydzień z",
+  "keyword": "AGENTEM AI",
+  "days": [
+    {
+      "label": "PN",
+      "ok": true
+    },
+    {
+      "label": "WT",
+      "ok": true
+    },
+    {
+      "label": "ŚR",
+      "ok": false
+    },
+    {
+      "label": "CZ",
+      "ok": true
+    },
+    {
+      "label": "PT",
+      "ok": true
+    },
+    {
+      "label": "SO",
+      "ok": true
+    },
+    {
+      "label": "ND",
+      "ok": true
+    }
+  ],
+  "resultSuffix": "",
+  "resultText": "dni bez mojej pomocy",
+  "failText": "1 wpadka",
+  "timing": {
+    "firstPress": 0.85,
+    "pressGap": 0.33,
+    "failPause": 0.25,
+    "wave": 4.6
+  }
+}
