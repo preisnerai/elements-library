@@ -1,0 +1,19 @@
+{
+  "fps": 30, "width": 1080, "height": 1920,
+  "colors": { "bg": "#ECECEC", "ink": "#0F0F10", "muted": "#5E5F64", "card": "#1B1B1D", "cardText": "#F3F3F3", "accent": "#D97757", "accentDeep": "#B85B3E", "eye": "#141210" },
+  "scenes": [
+    { "id": "S01", "dur": 5.6, "say": "Claude potrafi zamienić się w całe studio gier i nie musisz pisać ani linijki kodu." },
+    { "id": "S02", "dur": 4.2, "say": "To darmowy skill, a właściwie jedenaście skilli, które pracują razem." },
+    { "id": "S03", "dur": 2.4, "say": "Każdy z nich ma osobne zadanie." },
+    { "id": "S04", "dur": 3.2, "say": "Jeden rozbiera na części mechanikę gry, którą lubisz," },
+    { "id": "S05", "dur": 2.3, "say": "drugi robi od nowa grafikę," },
+    { "id": "S06", "dur": 1.9, "say": "trzeci buduje backend," },
+    { "id": "S07", "dur": 6.0, "say": "a czwarty podpina grę pod dowolny kontroler. Dzięki temu zagrasz na telefonie, tablecie albo laptopie." },
+    { "id": "S08", "dur": 2.3, "say": "Najciekawszy jest skill od modów." },
+    { "id": "S09", "dur": 7.0, "say": "Opisujesz zmianę własnymi słowami, a Claude przebudowuje grę od środka: dodaje mapę ze śniegiem, nową broń, nowe stroje," },
+    { "id": "S10", "dur": 5.6, "say": "a nawet łączy dwie gry w jedną, na przykład miasto z GTA z budowaniem z Minecrafta." },
+    { "id": "S11", "dur": 3.2, "say": "Nie powtarzasz więc cudzej gry, tylko budujesz własną." },
+    { "id": "S12", "dur": 4.8, "say": "Zainstalujesz go jednym ruchem: wklejasz link w Claude i piszesz install skill." },
+    { "id": "S13", "dur": 7.6, "say": "U mnie ta sama zasada działa w OpenCode, bo każdy skill ma tam jedną rolę, więc AI się nie gubi." }
+  ]
+}
