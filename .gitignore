@@ -5,3 +5,6 @@ __pycache__/
 .cache/
 tmp/
 media/
+out/game-studio/stills/
+out/game-studio/review/
+video/game-studio/src/dev/
