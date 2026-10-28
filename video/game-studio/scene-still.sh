@@ -5,8 +5,8 @@
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"; ROOT="$(cd "$HERE/../.." && pwd)"
 ID="$1"; shift
-BROWSER="${REMOTION_BROWSER:-$(ls -d ${PLAYWRIGHT_BROWSERS_PATH:-$HOME/.cache/ms-playwright}/chromium_headless_shell-*/chrome-linux/headless_shell 2>/dev/null | tail -1)}"
-OUTDIR="${STILLS_DIR:-$ROOT/out/game-studio/stills}"; mkdir -p "$OUTDIR"
+BROWSER="${REMOTION_BROWSER:-$(ls -d ${PLAYWRIGHT_BROWSERS_PATH:-$HOME/.cache/ms-playwright}/chromium_headless_shell-*/{chrome-linux/headless_shell,chrome-headless-shell-linux64/chrome-headless-shell} 2>/dev/null | tail -1 || true)}"
+OUTDIR="${STILLS_DIR:-$ROOT/out/game-studio/stills}"; mkdir -p "$OUTDIR" "$HERE/src/dev"
 ENTRY="$HERE/src/dev/_$ID.jsx"; BUNDLE="$(mktemp -d)"
 cat > "$ENTRY" <<JSX
 import React, { useEffect, useState } from 'react';
@@ -32,6 +32,7 @@ for s in "$@"; do f=$(awk -v s="$s" 'BEGIN{printf "%d", s*30}'); o="$OUTDIR/${ID
   npx remotion still "$BUNDLE" Scene "$o" --frame="$f" ${BROWSER:+--browser-executable="$BROWSER"} --log=error; FILES+=("$o"); done
 rm -rf "$BUNDLE" "$ENTRY"
 # arkusz: wszystkie klatki obok siebie (po 360 px szerokości) + znacznik czasu
-IN=(); FC=""; i=0; for o in "${FILES[@]}"; do IN+=(-i "$o"); FC+="[$i]scale=360:-1,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf:text='$(basename "$o" .png)':x=6:y=6:fontsize=18:fontcolor=white:box=1:boxcolor=black@0.6[v$i];"; i=$((i+1)); done
+FONT=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf; [ -f "$FONT" ] || FONT="$(fc-match -f '%{file}' monospace)"
+IN=(); FC=""; i=0; for o in "${FILES[@]}"; do IN+=(-i "$o"); FC+="[$i]scale=360:-1,drawtext=fontfile=$FONT:text='$(basename "$o" .png)':x=6:y=6:fontsize=18:fontcolor=white:box=1:boxcolor=black@0.6[v$i];"; i=$((i+1)); done
 if [ $i -gt 1 ]; then ST=""; for ((k=0;k<i;k++)); do ST+="[v$k]"; done; ffmpeg -hide_banner -loglevel error -y "${IN[@]}" -filter_complex "${FC}${ST}hstack=inputs=$i" "$OUTDIR/${ID}_sheet.png"; else cp "${FILES[0]}" "$OUTDIR/${ID}_sheet.png"; fi
 echo "sheet: $OUTDIR/${ID}_sheet.png"
