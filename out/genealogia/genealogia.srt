@@ -1,0 +1,59 @@
+1
+00:00:00,000 --> 00:00:04,400
+Co się stanie, gdy każesz ChatGPT zbudować całe drzewo genealogiczne
+
+2
+00:00:04,400 --> 00:00:07,600
+i znaleźć krewnych, o których nie miałeś pojęcia?
+
+3
+00:00:07,600 --> 00:00:12,600
+Pokażę Ci cztery prompty w jednym czacie, które robią to krok po kroku.
+
+4
+00:00:12,600 --> 00:00:18,000
+Najpierw piszesz: chcę zbudować pełne drzewo genealogiczne, więc zapytaj mnie o wszystko, co potrzebujesz.
+
+5
+00:00:18,000 --> 00:00:24,800
+Podajesz imię i nazwisko, miejsce, z którego pochodzi rodzina, nazwiska panieńskie babć i każdego krewnego, jakiego pamiętasz,
+
+6
+00:00:24,800 --> 00:00:27,800
+a ChatGPT układa z tego czyste drzewo wyjściowe.
+
+7
+00:00:27,800 --> 00:00:33,800
+Potem zostajesz w tym samym czacie i piszesz: na podstawie mojego nazwiska i miejsca, skąd pochodzi moja rodzina,
+
+8
+00:00:33,800 --> 00:00:39,600
+powiedz mi, jaki jest początek mojego rodu i jak daleko wstecz da się go prześledzić.
+
+9
+00:00:39,600 --> 00:00:42,600
+ChatGPT zbiera historię stojącą za Twoim nazwiskiem.
+
+10
+00:00:42,600 --> 00:00:48,400
+Teraz sztuczka. Piszesz: wykorzystując wszystko, co o mnie wiesz, przeszukaj rejestry publiczne, bazy genealogiczne i nekrologi,
+
+11
+00:00:48,400 --> 00:00:53,400
+znajdź krewnych, których jeszcze nie mam, i przy każdej osobie podaj źródło.
+
+12
+00:00:53,400 --> 00:00:59,200
+ChatGPT otwiera własną przeglądarkę i wraca z listą osób razem ze źródłami, które możesz sprawdzić.
+
+13
+00:00:59,200 --> 00:01:06,400
+Na koniec bonus: poproś o pełne wizualne drzewo ze wszystkimi znalezionymi osobami i z tym, jak jesteście ze sobą połączeni.
+
+14
+00:01:06,400 --> 00:01:09,000
+ChatGPT rozkłada całe drzewo przed Tobą w formie animacji.
+
+15
+00:01:09,000 --> 00:01:14,600
+Jeżeli chcesz wszystkie cztery prompty do skopiowania, zaobserwuj i skomentuj RODZINA.

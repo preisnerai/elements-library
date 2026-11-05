@@ -1,0 +1,21 @@
+{
+  "fps": 30, "width": 1080, "height": 1920,
+  "colors": { "bg": "#ECECEC", "ink": "#0F0F10", "muted": "#5E5F64", "card": "#1B1B1D", "cardText": "#F3F3F3", "accent": "#D97757", "accentDeep": "#B85B3E", "eye": "#141210" },
+  "scenes": [
+    { "id": "S01", "dur": 4.4, "say": "Co się stanie, gdy każesz ChatGPT zbudować całe drzewo genealogiczne" },
+    { "id": "S02", "dur": 3.2, "say": "i znaleźć krewnych, o których nie miałeś pojęcia?" },
+    { "id": "S03", "dur": 5.0, "say": "Pokażę Ci cztery prompty w jednym czacie, które robią to krok po kroku." },
+    { "id": "S04", "dur": 5.4, "say": "Najpierw piszesz: chcę zbudować pełne drzewo genealogiczne, więc zapytaj mnie o wszystko, co potrzebujesz." },
+    { "id": "S05", "dur": 6.8, "say": "Podajesz imię i nazwisko, miejsce, z którego pochodzi rodzina, nazwiska panieńskie babć i każdego krewnego, jakiego pamiętasz," },
+    { "id": "S06", "dur": 3.0, "say": "a ChatGPT układa z tego czyste drzewo wyjściowe." },
+    { "id": "S07", "dur": 6.0, "say": "Potem zostajesz w tym samym czacie i piszesz: na podstawie mojego nazwiska i miejsca, skąd pochodzi moja rodzina," },
+    { "id": "S08", "dur": 5.8, "say": "powiedz mi, jaki jest początek mojego rodu i jak daleko wstecz da się go prześledzić." },
+    { "id": "S09", "dur": 3.0, "say": "ChatGPT zbiera historię stojącą za Twoim nazwiskiem." },
+    { "id": "S10", "dur": 5.8, "say": "Teraz sztuczka. Piszesz: wykorzystując wszystko, co o mnie wiesz, przeszukaj rejestry publiczne, bazy genealogiczne i nekrologi," },
+    { "id": "S11", "dur": 5.0, "say": "znajdź krewnych, których jeszcze nie mam, i przy każdej osobie podaj źródło." },
+    { "id": "S12", "dur": 5.8, "say": "ChatGPT otwiera własną przeglądarkę i wraca z listą osób razem ze źródłami, które możesz sprawdzić." },
+    { "id": "S13", "dur": 7.2, "say": "Na koniec bonus: poproś o pełne wizualne drzewo ze wszystkimi znalezionymi osobami i z tym, jak jesteście ze sobą połączeni." },
+    { "id": "S14", "dur": 3.6, "say": "ChatGPT rozkłada całe drzewo przed Tobą w formie animacji." },
+    { "id": "S15", "dur": 4.6, "say": "Jeżeli chcesz wszystkie cztery prompty do skopiowania, zaobserwuj i skomentuj RODZINA." }
+  ]
+}

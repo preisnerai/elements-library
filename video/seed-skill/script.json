@@ -1,0 +1,18 @@
+{
+  "fps": 30, "width": 1080, "height": 1920,
+  "colors": { "bg": "#ECECEC", "ink": "#0F0F10", "muted": "#5E5F64", "card": "#1B1B1D", "cardText": "#F3F3F3", "accent": "#D97757", "accentDeep": "#B85B3E", "eye": "#141210" },
+  "scenes": [
+    { "id": "S01", "dur": 5.4, "say": "Claude znajdzie inwestorów dla Twojego biznesu i nawet napisze do nich za Ciebie." },
+    { "id": "S02", "dur": 3.4, "say": "Nazywa się seed skill i jest całkowicie darmowy." },
+    { "id": "S03", "dur": 4.8, "say": "To nie jest jeden skill, tylko jedenaście, i każdy ma inne zadanie." },
+    { "id": "S04", "dur": 2.8, "say": "Jeden znajduje słabe punkty Twoich konkurentów," },
+    { "id": "S05", "dur": 3.0, "say": "drugi szuka najlepszych inwestorów dla Twojego pomysłu." },
+    { "id": "S06", "dur": 3.2, "say": "Kolejny zamienia pomysł w biznesplan i pitch deck." },
+    { "id": "S07", "dur": 2.2, "say": "Najciekawszy jest closer skill." },
+    { "id": "S08", "dur": 3.4, "say": "Wysyła spersonalizowane maile do inwestorów i prowadzi rozmowy." },
+    { "id": "S09", "dur": 3.6, "say": "Ponawia kontakt, aż zostanie umówiona rozmowa z inwestorem." },
+    { "id": "S10", "dur": 4.4, "say": "Żeby to uruchomić, wklej link w Claude i napisz install skill." },
+    { "id": "S11", "dur": 5.2, "say": "Ja na co dzień pracuję w Claude Code, więc skille instaluję właśnie tam." },
+    { "id": "S12", "dur": 4.0, "say": "Zapisz sobie tę rolkę na później i zaobserwuj po więcej." }
+  ]
+}
