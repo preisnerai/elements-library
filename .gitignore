@@ -10,3 +10,6 @@ out/game-studio/review/
 video/game-studio/src/dev/
 out/genealogia/stills/
 out/seed-skill/stills/
+/public/
+*.jsx.new
+video/saraev-test/out/
