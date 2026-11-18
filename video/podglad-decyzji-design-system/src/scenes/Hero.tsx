@@ -24,7 +24,7 @@ export const Hero: React.FC<{ t: Theme; width: number; height: number }> = ({ t,
     </div>
     <div style={{ padding: "26px 40px" }}>
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 20 }}>
-        <div style={{ fontWeight: 600 }}>PreiScale</div>
+        <div style={{ fontWeight: 600 }}>preiscale</div>
         <div style={{ color: t.muted, display: "flex", gap: 28 }}>
           <span>Oferta</span>
           <span>Kontakt</span>

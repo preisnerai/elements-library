@@ -74,7 +74,7 @@ export const Frame: React.FC<FrameProps> = ({
     <div style={{ position: "absolute", left: 96, right: 96, top: 44 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div style={{ fontSize: 20, letterSpacing: "0.14em", textTransform: "uppercase", color: C.muted }}>
-          Podgląd decyzji, system designu PreiScale
+          Podgląd decyzji, system designu preiscale
         </div>
         <div style={{ display: "flex", gap: 8 }}>
           {[1, 2, 3, 4].map((i) => (
